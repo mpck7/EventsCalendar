@@ -183,6 +183,10 @@ class DateText : View {
         this.getLocationOnScreen(location)
         if (isPast) {
             mDateTextPaint.color = disabledTextColor
+            if (isSelected) {
+                mDateTextPaint.color = selectedTextColor
+                canvas.drawCircle(mCircleX.toFloat(), mCircleY.toFloat(), mBgCircleRadius, mSelectionPaint)
+            } else mDateTextPaint.color = defaultTextColor
             canvas.drawText("" + mDate.get(Calendar.DATE), mDateTextX.toFloat(), mDateTextY, mDateTextPaint)
         } else {
             if (isCurrentMonth && !isDisabled) {
