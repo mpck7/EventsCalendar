@@ -153,7 +153,7 @@ class DatesGridLayout : ViewGroup, DateText.DateSelectListener {
 
             hasEvent = dotsData != null && dotsData.hasEvent(mCurrentCalendar.get(Calendar.DATE))
 
-            isPast = mCurrentCalendar.timeInMillis <= Calendar.getInstance().timeInMillis - 86400000
+            isPast = false
 
             try {
                 for (c in EventsCalendarUtil.disabledDates) {
