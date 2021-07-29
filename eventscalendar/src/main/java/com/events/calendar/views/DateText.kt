@@ -181,11 +181,11 @@ class DateText : View {
     override fun onDraw(canvas: Canvas) {
         val location = IntArray(2)
         this.getLocationOnScreen(location)
- //       if (isPast) {
-  //          mDateTextPaint.color = disabledTextColor
-    //        canvas.drawText("" + mDate.get(Calendar.DATE), mDateTextX.toFloat(), mDateTextY, mDateTextPaint)
-     //   } 
-       // else 
+       if (isPast) {
+           mDateTextPaint.color = disabledTextColor
+            canvas.drawText("" + mDate.get(Calendar.DATE), mDateTextX.toFloat(), mDateTextY, mDateTextPaint)
+        } 
+        else 
         {
             if (isCurrentMonth && !isDisabled) {
                 if (isToday) canvas.drawCircle(mCircleX.toFloat(), mCircleY.toFloat(), mTodayCircleRadius, mTodayPaint)
